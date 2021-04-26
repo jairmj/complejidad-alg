@@ -2,7 +2,7 @@ import graphviz as gv
 import networkx as nx
 
 def nx2gv(G, weighted=False, params={'rankdir': 'LR', 'size': '5'},
-          path=None, pathparams={'color':'orangered'}):
+          path=None, pathparams={'color':'orangered'}, nodeinfo=False):
   if G.is_directed():
     g = gv.Digraph('G')
   else:
@@ -10,7 +10,10 @@ def nx2gv(G, weighted=False, params={'rankdir': 'LR', 'size': '5'},
   g.attr(**params)
 
   for i in range(G.number_of_nodes()):
-    g.node(str(i))
+    if nodeinfo:
+      g.node(str(i), **dict(G.nodes[i]))
+    else:
+      g.node(str(i))
 
   for u, v in G.edges():
     pp = pathparams if path and path[v] == u else {}

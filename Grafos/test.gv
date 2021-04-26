@@ -1,32 +1,21 @@
 digraph G {
 	rankdir=LR size=5
-	0
-	1
-	2
-	3
-	4
-	5
-	6
-	7
-	8
-	9
-	10
-	11
-	12
-	13
-	14
-	15
-	16
-	17
+	0 [label=undies color="#37AB65"]
+	1 [label=pants color="#3DF735"]
+	2 [label=belt color="#AD6D70"]
+	3 [label=shirt color="#EC2504"]
+	4 [label=tie color="#8C0B90"]
+	5 [label=jacket color="#C0E4FF"]
+	6 [label=socks color="#27B502"]
+	7 [label=shoes color="#7C60A8"]
+	8 [label=watch color="#CF95D7"]
+	0 -> 1
+	0 -> 7
+	1 -> 2
+	1 -> 7
+	2 -> 5
 	3 -> 2
-	6 -> 5
-	10 -> 6
-	5 -> 8
-	10 -> 9
-	3 -> 10
-	13 -> 12
-	9 -> 13
-	16 -> 15
-	17 -> 16
-	10 -> 17
+	3 -> 4
+	4 -> 5
+	6 -> 7
 }
